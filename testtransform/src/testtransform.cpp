@@ -259,7 +259,7 @@ Point PointCloudTransform::_normalizedScreenToUnitWorld(const Point &normalizedS
 }
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	cout << "!!!Making Transform Table!!!" << endl; // prints !!!Hello World!!!
 	ios state(nullptr);
 
 	PointCloudTransform pct(0, 0, 320, 240,
