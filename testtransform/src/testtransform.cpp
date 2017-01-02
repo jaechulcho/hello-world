@@ -32,7 +32,7 @@ inline bool floatEquals(float lhs, float rhs)
     return true;
 }
 
-
+/* Point Class */
 class Point
 {
 public:
