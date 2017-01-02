@@ -163,6 +163,7 @@ protected:
 	  Point _normalizedScreenToUnitWorld(const Point &normalizedScreen);
 	  void _init();
 };
+
 PointCloudTransform::PointCloudTransform(uint32_t left, uint32_t top, uint32_t width, uint32_t height,
 		  	  	  	  	  	  	  	  	 uint32_t rowsToMerge, uint32_t columnsToMerge,
 										  float fx, float fy, float cx, float cy,
