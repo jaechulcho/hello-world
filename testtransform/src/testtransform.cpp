@@ -285,7 +285,7 @@ int main() {
 					<< ","
 					<< setw(12) << setprecision(5) << p.y
 					<< ","
-					<< setw(12) << setprecision(5)<< p.z
+					<< setw(12) << setprecision(5) << p.z
 					<< endl;
 		}
 	}
