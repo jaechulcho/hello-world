@@ -18,7 +18,6 @@ using namespace std;
 
 void single(int M)
 {
-	/* 측정 시작 시간을 저장 한다. */
 	chrono::system_clock::time_point start = chrono::system_clock::now();
 	int result = count_prime(2, M);
 	chrono::duration<double> sec = chrono::system_clock::now() - start;
