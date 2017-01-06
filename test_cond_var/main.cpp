@@ -166,7 +166,7 @@ class rendezvous
 {
 public:
 	rendezvous(uint32_t count) : _threshold(count), _count(count), _generation(0) {
-		if (0 == count) { throw invalid_argument("count cannot be zero."); }
+		if (0 == count) { throw std::invalid_argument("count cannot be zero."); }
 	}
 
 	bool wait()
