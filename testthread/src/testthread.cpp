@@ -52,5 +52,6 @@ void multi(int M, int nthr)
 int main() {
 	const int M = 100000;
 	for (int i = 1; i < 10; ++i) multi(M, i);
+	cout << "== END ==" << endl;
 	return 0;
 }
