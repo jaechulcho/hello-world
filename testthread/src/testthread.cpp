@@ -15,13 +15,16 @@
 
 using namespace std;
 
+#define TimePoint	chrono::system_clock::time_point
+#define ChronoNow	chrono::system_clock::now
+#define dfDuration	chrono::duration<double>
 
 void single(int M)
 {
-	/* 측정 시작 시간을 저장 한다. */
-	chrono::system_clock::time_point start = chrono::system_clock::now();
+	/* saving start time */
+	TimePoint start = ChronoNow();
 	int result = count_prime(2, M);
-	chrono::duration<double> sec = chrono::system_clock::now() - start;
+	dfDuration sec = ChronoNow() - start;
 
 	cout << result << ' ' << sec.count() << "[sec]" << endl;
 }
@@ -32,10 +35,14 @@ void multi(int M, int nthr)
 	vector<int> count(nthr);
 	div_range<> rng(2, M, nthr);
 
-	chrono::system_clock::time_point start = chrono::system_clock::now();
+	TimePoint start = ChronoNow();
 	for (int i=0; i<nthr; ++i)
 	{
-		thr[i] = thread([&, i](int lo, int hi) {count[i] = count_prime(lo, hi);}, rng.lo(i), rng.hi(i));
+		thr[i] = thread([&, i](int lo, int hi) {
+							count[i] = count_prime(lo, hi);
+						},
+						rng.lo(i),
+						rng.hi(i));
 	}
 
 	int result = 0;
@@ -44,7 +51,7 @@ void multi(int M, int nthr)
 		thr[i].join();
 		result += count[i];
 	}
-	chrono::duration<double> sec = chrono::system_clock::now() - start;
+	dfDuration sec = ChronoNow() - start;
 
 	cout << result << ' ' << sec.count() << "[sec]: " << nthr << endl;
 }
