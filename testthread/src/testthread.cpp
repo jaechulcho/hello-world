@@ -21,8 +21,12 @@ using namespace std;
 
 void single(int M)
 {
+<<<<<<< HEAD
 	/* saving start time */
 	TimePoint start = ChronoNow();
+=======
+	chrono::system_clock::time_point start = chrono::system_clock::now();
+>>>>>>> 92731d30607db09b74a323e994cb27d5b8db95b0
 	int result = count_prime(2, M);
 	dfDuration sec = ChronoNow() - start;
 
