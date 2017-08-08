@@ -3,3 +3,5 @@
 *.exe
 Debug
 Release
+build/
+.settings/
